@@ -9,27 +9,11 @@ GameScene::GameScene(QObject *parent)
     setBackgroundBrush(QBrush(Qt::black));
 
     m_level.loadLevel();
+    m_level.loadEntities();
 
     m_frog = new Frog();
     addItem(m_frog);
 
-    m_car = new Car(Game::CarType::RACER);
-    addItem(m_car);
-    m_car->setPosition(8, Game::WINDOW_HEIGHT-2);
-
-    m_car1 = new Car(Game::CarType::BULLDOZER);
-    addItem(m_car1);
-    m_car1->setPosition(5, Game::WINDOW_HEIGHT-3);
-
-
-    m_car2 = new Car(Game::CarType::CAR);
-    addItem(m_car2);
-    m_car2->setPosition(14, Game::WINDOW_HEIGHT-4);
-
-
-    m_car3 = new Car(Game::CarType::TIR);
-    addItem(m_car3);
-    m_car3->setPosition(10, Game::WINDOW_HEIGHT-5);
 
 
     connect(&m_timer, &QTimer::timeout, this, &GameScene::loop);

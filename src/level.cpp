@@ -1,15 +1,17 @@
 #include "level.h"
 #include "game.h"
+#include "car.h"
 #include <QGraphicsPixmapItem>
 
 Level::Level(QGraphicsScene *scene)
+    : m_scene(scene), m_currentLevel(0)
 {
-    m_scene = scene;
+
 }
 
 void Level::loadLevel()
 {
-
+    //static envoirnments
 
     for(int i = 0; i < Game::WINDOW_WIDTH; ++i)
     {
@@ -59,5 +61,35 @@ void Level::loadLevel()
         QGraphicsPixmapItem* tileItem = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Asphalt0p.x(), Game::Asphalt0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
         tileItem->setPos(Game::convertGridPointToPixel(i), Game::convertGridPointToPixel(Game::WINDOW_HEIGHT-1));
         m_scene->addItem(tileItem);
+    }
+}
+
+void Level::loadEntities()
+{
+    if(m_currentLevel == 0)
+    {
+        Car* car = new Car(Game::CarType::RACER);
+        m_scene->addItem(car);
+        car->setPosition(8, Game::WINDOW_HEIGHT-2);
+        car->setRandomSpeed(1);
+        car->setDirection(Game::Direction::LEFT);
+
+        Car* car1 = new Car(Game::CarType::BULLDOZER);
+        m_scene->addItem(car1);
+        car1->setPosition(5, Game::WINDOW_HEIGHT-3);
+        car1->setRandomSpeed(1);
+        car1->setDirection(Game::Direction::LEFT);
+
+        Car* car2 = new Car(Game::CarType::CAR);
+        m_scene->addItem(car2);
+        car2->setPosition(10, Game::WINDOW_HEIGHT-4);
+        car2->setRandomSpeed(1);
+        car2->setDirection(Game::Direction::RIGHT);
+
+        Car* car3 = new Car(Game::CarType::TIR);
+        m_scene->addItem(car3);
+        car3->setPosition(10, Game::WINDOW_HEIGHT-5);
+        car3->setRandomSpeed(1);
+        car3->setDirection(Game::Direction::LEFT);
     }
 }

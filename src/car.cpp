@@ -104,6 +104,22 @@ void Car::move()
     }
 }
 
+void Car::setRandomSpeed(int X)
+{
+    float r2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/X))+1;
+    m_speed = r2;
+}
+
+void Car::setDirection(Game::Direction direction)
+{
+    if(m_direction == direction)
+    {
+        return;
+    }
+    m_direction = direction;
+    choosePixmap();
+}
+
 void Car::setPosition(QPoint gridPoint)
 {
     setPosition(gridPoint.x(), gridPoint.y());
