@@ -14,12 +14,18 @@ void Level::loadLevel()
     for(int i = 0; i < Game::WINDOW_WIDTH; ++i)
     {
         QGraphicsPixmapItem* tileItem = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Asphalt0p.x(), Game::Asphalt0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem->setPos(Game::convertGridPointToPixel(i), Game::convertGridPointToPixel(Game::WINDOW_HEIGHT-7));
+        tileItem->setPos(Game::convertGridPointToPixel(i), Game::convertGridPointToPixel(Game::WINDOW_HEIGHT-8));
         m_scene->addItem(tileItem);
     }
     for(int i = 0; i < Game::WINDOW_WIDTH; ++i)
     {
         QGraphicsPixmapItem* tileItem = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Asphalt3p.x(), Game::Asphalt3p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem->setPos(Game::convertGridPointToPixel(i), Game::convertGridPointToPixel(Game::WINDOW_HEIGHT-7));
+        m_scene->addItem(tileItem);
+    }
+    for(int i = 0; i < Game::WINDOW_WIDTH; ++i)
+    {
+        QGraphicsPixmapItem* tileItem = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Asphalt2p.x(), Game::Asphalt2p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
         tileItem->setPos(Game::convertGridPointToPixel(i), Game::convertGridPointToPixel(Game::WINDOW_HEIGHT-6));
         m_scene->addItem(tileItem);
     }
