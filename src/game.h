@@ -20,7 +20,7 @@ public:
     static int convertGridPointToPixel(int gridPointVal);
 
     enum class Direction{
-        LEFT, UP, RIGHT
+        LEFT, UP, RIGHT, DOWN
     };
 
     static const QString PATH_TO_FROG_PIXMAP;

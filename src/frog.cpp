@@ -28,6 +28,10 @@ void Frog::setPosition(int grid_x, int grid_y)
     {
         grid_y = 0;
     }
+    else if(grid_y >= Game::WINDOW_HEIGHT)
+    {
+        grid_y = Game::WINDOW_HEIGHT - 1;
+    }
     m_gridPos.setX(grid_x);
     m_gridPos.setY(grid_y);
 
@@ -62,6 +66,12 @@ void Frog::keyPressEvent(QKeyEvent *event)
         {
             setPosition(m_gridPos.x()-1, m_gridPos.y());
             m_direction = Game::Direction::LEFT;
+        }
+            break;
+        case Qt::Key_Down:
+        {
+            setPosition(m_gridPos.x(), m_gridPos.y()+1);
+            m_direction = Game::Direction::DOWN;
         }
             break;
         }
