@@ -22,7 +22,7 @@ private slots:
 private:
     Game m_game;
     Frog *m_frog;
-    Car *m_car;
+    Car *m_car, *m_car1, *m_car2, *m_car3, *m_car4;
     Level m_level;
     float m_loopTime, m_deltaTime;
     const float m_loopSpeed;

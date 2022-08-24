@@ -1,11 +1,64 @@
 #include "car.h"
 
-Car::Car(QObject *parent)
-    : QObject{parent}, QGraphicsPixmapItem(QPixmap(Game::PATH_TO_CAR_PIXMAP))
+QList<Car*> Car::s_carsManager;
+
+Car::Car(Game::CarType type)
+    : QGraphicsPixmapItem(QPixmap(Game::PATH_TO_CAR_PIXMAP))
 {
     m_speed = 1.f;
     m_direction = Game::Direction::LEFT;
+    m_pixmap = pixmap();
+    m_pixmap_r = QPixmap(Game::PATH_TO_CAR_R_PIXMAP);
+    m_type = type;
 
+    choosePixmap();
+
+    s_carsManager.push_back(this);
+}
+
+Car::~Car()
+{
+    s_carsManager.removeOne(this);
+}
+
+void Car::choosePixmap()
+{
+    QPixmap newPixmap;
+    if(m_direction == Game::Direction::LEFT)
+    {
+        newPixmap = m_pixmap;
+    }
+    else
+    {
+        newPixmap = m_pixmap_r;
+    }
+
+    switch(m_type)
+    {
+    case Game::CarType::RACER:
+    {
+        m_carSize = Game::GRID_SIZE;
+        setPixmap(newPixmap.copy(0,0,m_carSize,m_carSize));
+    }
+        break;
+    case Game::CarType::CAR:
+    {
+        m_carSize = Game::GRID_SIZE;
+        setPixmap(newPixmap.copy(32,0,m_carSize,m_carSize));
+    }
+        break;
+    case Game::CarType::BULLDOZER:
+    {
+        m_carSize = Game::GRID_SIZE;
+        setPixmap(newPixmap.copy(64,0,m_carSize,m_carSize));
+    }
+        break;
+    case Game::CarType::TIR:
+    {
+        m_carSize = 2*Game::GRID_SIZE;
+        setPixmap(newPixmap.copy(96,0,m_carSize,m_carSize));
+    }
+    }
 }
 
 void Car::setPosition(int grid_x, int grid_y)
@@ -42,12 +95,13 @@ void Car::move()
     if(x() + boundingRect().width() < 0)
     {
         m_direction = Game::Direction::RIGHT;
+        choosePixmap();
     }
     else if(x() > Game::RESOLUTION.width())
     {
         m_direction = Game::Direction::LEFT;
+        choosePixmap();
     }
-    qDebug() << "pos" << pos();
 }
 
 void Car::setPosition(QPoint gridPoint)
