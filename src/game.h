@@ -13,6 +13,8 @@ public:
     constexpr static const int WINDOW_WIDTH = 14;
     constexpr static const int WINDOW_HEIGHT = 16;
     constexpr static const QSize RESOLUTION = QSize(GRID_SIZE*WINDOW_WIDTH, GRID_SIZE*WINDOW_HEIGHT);
+    constexpr static const int FPS = 60;
+
 
     static int convertPixelToGridPoint(int pixelVal);
     static int convertGridPointToPixel(int gridPointVal);
@@ -23,6 +25,7 @@ public:
 
     static const QString PATH_TO_FROG_PIXMAP;
     static const QString PATH_TO_TILE_PIXMAP;
+    static const QString PATH_TO_CAR_PIXMAP;
 
     constexpr static const QPoint Asphalt0p = QPoint(0,0);
     constexpr static const QPoint Asphalt1p = QPoint(32,0);
