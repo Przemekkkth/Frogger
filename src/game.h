@@ -35,6 +35,10 @@ public:
     constexpr static const QPoint Asphalt4p = QPoint(128,0);
     constexpr static const QPoint Asphalt5p = QPoint(160,0);
 
+    constexpr static const QPoint Water0p = QPoint(0, 32);
+    constexpr static const QPoint Grass0p = QPoint(32, 32);
+
+
     enum class CarType{
         RACER, BULLDOZER, CAR, TIR
     };
