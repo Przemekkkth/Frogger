@@ -35,5 +35,6 @@ void GameScene::loop()
         {
             Car::s_carsManager.at(idx)->move();
         }
+        m_frog->updateFrog();
     }
 }

@@ -1,9 +1,10 @@
 #include "game.h"
 
-const QString Game::PATH_TO_FROG_PIXMAP = ":/res/frog.png";
-const QString Game::PATH_TO_TILE_PIXMAP = ":/res/tiles.png";
-const QString Game::PATH_TO_CAR_PIXMAP  = ":/res/car.png";
-const QString Game::PATH_TO_CAR_R_PIXMAP = ":/res/cars_r.png";
+const QString Game::PATH_TO_FROG_PIXMAP      = ":/res/frog.png";
+const QString Game::PATH_TO_DEAD_FROG_PIXMAP = ":/res/frog_dead.png";
+const QString Game::PATH_TO_TILE_PIXMAP      = ":/res/tiles.png";
+const QString Game::PATH_TO_CAR_PIXMAP       = ":/res/car.png";
+const QString Game::PATH_TO_CAR_R_PIXMAP     = ":/res/cars_r.png";
 
 Game::Game()
 {

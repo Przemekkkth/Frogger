@@ -24,6 +24,7 @@ public:
     };
 
     static const QString PATH_TO_FROG_PIXMAP;
+    static const QString PATH_TO_DEAD_FROG_PIXMAP;
     static const QString PATH_TO_TILE_PIXMAP;
     static const QString PATH_TO_CAR_PIXMAP;
     static const QString PATH_TO_CAR_R_PIXMAP;

@@ -4,5 +4,6 @@
         <file>res/tiles.png</file>
         <file>res/car.png</file>
         <file>res/cars_r.png</file>
+        <file>res/frog_dead.png</file>
     </qresource>
 </RCC>
