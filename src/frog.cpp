@@ -54,6 +54,14 @@ void Frog::setDead()
     setPixmap(m_deadFrogPixmap.copy(int(m_direction)*Game::GRID_SIZE, 0, Game::GRID_SIZE, Game::GRID_SIZE ));
 }
 
+void Frog::setLife()
+{
+    m_isDead = false;
+    m_direction = Game::Direction::UP;
+    setPosition(Game::WINDOW_WIDTH/2-1, Game::WINDOW_HEIGHT-1);
+    setPixmap(m_pixmap.copy(int(m_direction)*Game::GRID_SIZE, 0, Game::GRID_SIZE, Game::GRID_SIZE ));
+}
+
 void Frog::checkCollisionWithCar()
 {
     QList<QGraphicsItem*> collidedList = collidingItems();
@@ -113,23 +121,44 @@ void Frog::keyPressEvent(QKeyEvent *event)
 
         case Qt::Key_Up:
         {
-            m_moveUp = true;
-  }
+            if(!m_isDead)
+            {
+                m_moveUp = true;
+            }
+        }
             break;
         case Qt::Key_Right:
         {
-            m_moveRight = true;
-     }
+            if(!m_isDead)
+            {
+                m_moveRight = true;
+            }
+        }
             break;
         case Qt::Key_Left:
         {
-            m_moveLeft = true;
-      }
+            if(!m_isDead)
+            {
+                m_moveLeft = true;
+            }
+        }
             break;
         case Qt::Key_Down:
         {
-            m_moveDown = true;
-    }
+            if(!m_isDead)
+            {
+                m_moveDown = true;
+            }
+        }
+            break;
+        case Qt::Key_Enter:
+        case Qt::Key_R:
+        {
+            if(m_isDead)
+            {
+                setLife();
+            }
+        }
             break;
 
 

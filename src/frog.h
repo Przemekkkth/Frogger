@@ -14,6 +14,7 @@ public:
     void setPosition(int grid_x, int grid_y);
     void setPosition(QPoint gridPoint);
     void setDead();
+    void setLife();
     void checkCollisionWithCar();
     void updateFrog();
 signals:
