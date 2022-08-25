@@ -30,6 +30,50 @@ void Level::loadLevel()
         QGraphicsPixmapItem* tileItem3 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
         tileItem3->setPos(Game::convertGridPointToPixel(2), Game::convertGridPointToPixel(1));
         m_scene->addItem(tileItem3);
+
+        QGraphicsPixmapItem* tileItem4 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem4->setPos(Game::convertGridPointToPixel(3), Game::convertGridPointToPixel(1));
+        m_scene->addItem(tileItem4);
+
+        QGraphicsPixmapItem* tileItem5 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem5->setPos(Game::convertGridPointToPixel(4), Game::convertGridPointToPixel(1));
+        m_scene->addItem(tileItem5);
+
+        QGraphicsPixmapItem* tileItem6 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem6->setPos(Game::convertGridPointToPixel(5), Game::convertGridPointToPixel(1));
+        m_scene->addItem(tileItem6);
+
+        QGraphicsPixmapItem* tileItem7 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem7->setPos(Game::convertGridPointToPixel(6), Game::convertGridPointToPixel(1));
+        m_scene->addItem(tileItem7);
+
+        QGraphicsPixmapItem* tileItem8 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem8->setPos(Game::convertGridPointToPixel(7), Game::convertGridPointToPixel(1));
+        m_scene->addItem(tileItem8);
+
+        QGraphicsPixmapItem* tileItem9 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem9->setPos(Game::convertGridPointToPixel(8), Game::convertGridPointToPixel(1));
+        m_scene->addItem(tileItem9);
+
+        QGraphicsPixmapItem* tileItem10 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem10->setPos(Game::convertGridPointToPixel(9), Game::convertGridPointToPixel(1));
+        m_scene->addItem(tileItem10);
+
+        QGraphicsPixmapItem* tileItem11 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem11->setPos(Game::convertGridPointToPixel(10), Game::convertGridPointToPixel(1));
+        m_scene->addItem(tileItem11);
+
+        QGraphicsPixmapItem* tileItem12 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem12->setPos(Game::convertGridPointToPixel(11), Game::convertGridPointToPixel(1));
+        m_scene->addItem(tileItem12);
+
+        QGraphicsPixmapItem* tileItem13 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem13->setPos(Game::convertGridPointToPixel(12), Game::convertGridPointToPixel(1));
+        m_scene->addItem(tileItem13);
+
+        QGraphicsPixmapItem* tileItem14 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+        tileItem14->setPos(Game::convertGridPointToPixel(13), Game::convertGridPointToPixel(1));
+        m_scene->addItem(tileItem14);
     //2
     for(int i = 0; i < Game::WINDOW_WIDTH; ++i)
     {
