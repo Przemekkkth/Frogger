@@ -44,6 +44,9 @@ public:
         RACER, BULLDOZER, CAR, TIR
     };
 
+    enum class Layer{
+        LOG = 1, FROG, CAR
+    };
 };
 
 #endif // GAME_H

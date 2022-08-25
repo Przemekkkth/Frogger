@@ -15,6 +15,7 @@ Frog::Frog()
     setPosition(Game::WINDOW_WIDTH/2-1, Game::WINDOW_HEIGHT-1);
     setFlag(QGraphicsItem::ItemIsFocusable);
     setFocus();
+    setZValue(int(Game::Layer::FROG));
 }
 
 void Frog::setPosition(int grid_x, int grid_y)

@@ -14,6 +14,7 @@ Car::Car(Game::CarType type)
     choosePixmap();
 
     s_carsManager.push_back(this);
+    setZValue(int(Game::Layer::CAR));
 }
 
 Car::~Car()
