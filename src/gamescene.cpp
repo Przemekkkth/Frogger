@@ -51,7 +51,7 @@ void GameScene::loop()
         if( isFragUnderWater &&
                 m_frog->position().y() <= Game::MAX_WATER_Y && m_frog->position().y() >= Game::MIN_WATER_Y)
         {
-            m_frog->setDead();
+            m_frog->setDeadByWater();
             m_frog->setOnLog(false);
         }
         m_frog->updateFrog();

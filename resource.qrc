@@ -6,5 +6,6 @@
         <file>res/cars_r.png</file>
         <file>res/frog_dead.png</file>
         <file>res/logs.png</file>
+        <file>res/melting_frog.png</file>
     </qresource>
 </RCC>

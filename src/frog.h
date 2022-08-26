@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
+#include <QTimer>
 #include "game.h"
 
 class Frog : public QObject, public QGraphicsPixmapItem
@@ -14,24 +15,31 @@ public:
     void setPosition(int grid_x, int grid_y);
     void setPosition(QPoint gridPoint);
     QPoint position() const;
-    void setDead();
+    void setDeadByCar();
+    void setDeadByWater();
     void setLife();
     void checkCollisionWithCar();
     void updateFrog();
     void move(float speed);
     void setOnLog(bool val);
     bool onLog() const;
+    bool isDead() const;
 signals:
 
+private slots:
+    void updateMeltFrogPixmap();
 private:
 
     QPoint m_gridPos;
     QPixmap m_pixmap;
     QPixmap m_deadFrogPixmap;
+    QPixmap m_meltFrogPixmap;
     Game::Direction m_direction;
     bool m_isDead;
     bool m_moveUp, m_moveDown, m_moveLeft, m_moveRight;
     bool m_onLog;
+    int m_currentMeltFrogFrame;
+    QTimer m_meltFrogTimer;
 protected:
     virtual void keyPressEvent(QKeyEvent *event) override;
 };

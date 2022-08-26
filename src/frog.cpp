@@ -5,18 +5,21 @@
 Frog::Frog()
     : QGraphicsPixmapItem(Game::PATH_TO_FROG_PIXMAP), m_isDead(false),
       m_moveUp(false), m_moveDown(false), m_moveLeft(false), m_moveRight(false),
-      m_onLog(false)
+      m_onLog(false), m_currentMeltFrogFrame(0)
 {
     m_pixmap = pixmap();
     m_direction = Game::Direction::UP;
     setPixmap(m_pixmap.copy(int(m_direction)*Game::GRID_SIZE, 0, Game::GRID_SIZE, Game::GRID_SIZE ));
 
     m_deadFrogPixmap.load(Game::PATH_TO_DEAD_FROG_PIXMAP);
+    m_meltFrogPixmap.load(Game::PATH_TO_MELTING_FROG_PIXMAP);
 
     setPosition(Game::WINDOW_WIDTH/2-1, Game::WINDOW_HEIGHT-1);
     setFlag(QGraphicsItem::ItemIsFocusable);
     setFocus();
     setZValue(int(Game::Layer::FROG));
+
+    connect(&m_meltFrogTimer, &QTimer::timeout, this, &Frog::updateMeltFrogPixmap);
 }
 
 void Frog::setPosition(int grid_x, int grid_y)
@@ -55,15 +58,32 @@ QPoint Frog::position() const
     return m_gridPos;
 }
 
-void Frog::setDead()
+void Frog::setDeadByCar()
 {
+    if(m_isDead)
+    {
+        return;
+    }
     m_isDead = true;
     setPixmap(m_deadFrogPixmap.copy(int(m_direction)*Game::GRID_SIZE, 0, Game::GRID_SIZE, Game::GRID_SIZE ));
+}
+
+void Frog::setDeadByWater()
+{
+    if(m_isDead)
+    {
+        return;
+    }
+    m_isDead = true;
+    setPixmap(m_meltFrogPixmap.copy(m_currentMeltFrogFrame*Game::GRID_SIZE,int(m_direction)*Game::GRID_SIZE, Game::GRID_SIZE, Game::GRID_SIZE ));
+    m_meltFrogTimer.start(125);
 }
 
 void Frog::setLife()
 {
     m_isDead = false;
+    m_meltFrogTimer.stop();
+    m_currentMeltFrogFrame = 0;
     m_direction = Game::Direction::UP;
     setPosition(Game::WINDOW_WIDTH/2-1, Game::WINDOW_HEIGHT-1);
     setPixmap(m_pixmap.copy(int(m_direction)*Game::GRID_SIZE, 0, Game::GRID_SIZE, Game::GRID_SIZE ));
@@ -77,7 +97,7 @@ void Frog::checkCollisionWithCar()
         Car* car = dynamic_cast<Car*>(collidedList[idx]);
         if(car)
         {
-            setDead();
+            setDeadByCar();
             return;
         }
     }
@@ -183,6 +203,21 @@ void Frog::setOnLog(bool val)
 bool Frog::onLog() const
 {
     return m_onLog;
+}
+
+bool Frog::isDead() const
+{
+    return m_isDead;
+}
+
+void Frog::updateMeltFrogPixmap()
+{
+    m_currentMeltFrogFrame++;
+    if(m_currentMeltFrogFrame > 3)
+    {
+        m_currentMeltFrogFrame = 3;
+    }
+    setPixmap(m_meltFrogPixmap.copy(m_currentMeltFrogFrame*Game::GRID_SIZE,int(m_direction)*Game::GRID_SIZE, Game::GRID_SIZE, Game::GRID_SIZE ));
 }
 
 void Frog::keyPressEvent(QKeyEvent *event)
