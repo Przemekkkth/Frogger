@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 #include "game.h"
-#include "frog.h"
+#include "frog.h" 
 
 class Log : public QObject, public QGraphicsPixmapItem
 {
@@ -18,6 +18,7 @@ public:
 
     bool checkFrog(const Frog* frog);
     float speed() const;
+    void setDirection(Game::Direction direction);
 signals:
 
 private:

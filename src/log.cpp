@@ -60,15 +60,22 @@ void Log::move()
     }
 
 ////////////////////////////
+    if(m_direction == Game::Direction::LEFT)
+    {
+        if(x() < 0 - boundingRect().width())
+        {
+            setPos(Game::convertGridPointToPixel(Game::WINDOW_WIDTH), y());
+        }
 
-    if(x() < 0 - boundingRect().width())
-    {
-        setPos(Game::convertGridPointToPixel(Game::WINDOW_WIDTH), y());
     }
-    else if(x() - boundingRect().width() > Game::RESOLUTION.width())
+    else
     {
-        setPos(-2*boundingRect().width(), y());
+        if(x() - boundingRect().width() > Game::RESOLUTION.width())
+        {
+            setPos(-boundingRect().width(), y());
+        }
     }
+
 }
 
 bool Log::checkFrog(const Frog *frog)
@@ -94,4 +101,9 @@ float Log::speed() const
     {
         return m_speed;
     }
+}
+
+void Log::setDirection(Game::Direction direction)
+{
+    m_direction = direction;
 }

@@ -205,10 +205,12 @@ void Level::loadLogs()
     {
         Log* log = new Log(3);
         log->setPosition(8,7);
+        log->setDirection(Game::Direction::RIGHT);
         m_scene->addItem(log);
 
         Log* log1 = new Log(3);
         log1->setPosition(12,7);
+        log1->setDirection(Game::Direction::RIGHT);
         m_scene->addItem(log1);
 
         Log* log2 = new Log(2);

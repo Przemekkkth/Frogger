@@ -165,6 +165,14 @@ void Frog::move(float speed)
 {
     m_gridPos.setX(Game::convertPixelToGridPoint(pos().x()));
     moveBy(speed, 0);
+    if(x() < 0)
+    {
+        setX(0);
+    }
+    else if(x() + boundingRect().width() > Game::RESOLUTION.width())
+    {
+        setX(Game::RESOLUTION.width() - boundingRect().width());
+    }
 }
 
 void Frog::setOnLog(bool val)
