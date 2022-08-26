@@ -19,6 +19,8 @@ public:
     void checkCollisionWithCar();
     void updateFrog();
     void move(float speed);
+    void setOnLog(bool val);
+    bool onLog() const;
 signals:
 
 private:
@@ -29,6 +31,7 @@ private:
     Game::Direction m_direction;
     bool m_isDead;
     bool m_moveUp, m_moveDown, m_moveLeft, m_moveRight;
+    bool m_onLog;
 protected:
     virtual void keyPressEvent(QKeyEvent *event) override;
 };

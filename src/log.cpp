@@ -76,12 +76,10 @@ bool Log::checkFrog(const Frog *frog)
     if(x() <= frog->pos().x() && x() + boundingRect().width()  >= frog->pos().x() + frog->boundingRect().width() &&
        y() <= frog->pos().y() && y() + boundingRect().height() >= frog->pos().y() + frog->boundingRect().height() )
     {
-        qDebug() << "true";
         return true;
     }
     else
     {
-        //qDebug() << "false";
         return false;
     }
 }

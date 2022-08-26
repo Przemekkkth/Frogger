@@ -207,12 +207,28 @@ void Level::loadLogs()
         log->setPosition(8,7);
         m_scene->addItem(log);
 
-        Log* log1 = new Log(1);
-        log1->setPosition(8,6);
+        Log* log1 = new Log(3);
+        log1->setPosition(12,7);
         m_scene->addItem(log1);
 
         Log* log2 = new Log(2);
-        log2->setPosition(8, 5);
+        log2->setPosition(8,6);
         m_scene->addItem(log2);
+
+        Log* log3 = new Log(2);
+        log3->setPosition(8, 5);
+        m_scene->addItem(log3);
+
+        Log* log4 = new Log(2);
+        log4->setPosition(8, 4);
+        m_scene->addItem(log4);
+
+        Log* log5 = new Log(2);
+        log5->setPosition(8, 3);
+        m_scene->addItem(log5);
+
+        Log* log6 = new Log(2);
+        log6->setPosition(8, 2);
+        m_scene->addItem(log6);
     }
 }

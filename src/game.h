@@ -14,6 +14,8 @@ public:
     constexpr static const int WINDOW_HEIGHT = 16;
     constexpr static const QSize RESOLUTION = QSize(GRID_SIZE*WINDOW_WIDTH, GRID_SIZE*WINDOW_HEIGHT);
     constexpr static const int FPS = 60;
+    constexpr static const int MAX_WATER_Y = 7;
+    constexpr static const int MIN_WATER_Y = 2;
 
 
     static int convertPixelToGridPoint(int pixelVal);

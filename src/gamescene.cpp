@@ -41,16 +41,18 @@ void GameScene::loop()
         {
             Log::s_logsManager.at(idx)->move();
             if(Log::s_logsManager.at(idx)->checkFrog(m_frog) &&
-                    m_frog->position().y() <= 7 && m_frog->position().y() >= 2)
+                    m_frog->position().y() <= Game::MAX_WATER_Y && m_frog->position().y() >= Game::MIN_WATER_Y)
             {
                 m_frog->move(Log::s_logsManager.at(idx)->speed());
+                m_frog->setOnLog(true);
                 isFragUnderWater = false;
             }
         }
         if( isFragUnderWater &&
-                m_frog->position().y() <= 7 && m_frog->position().y() >= 2)
+                m_frog->position().y() <= Game::MAX_WATER_Y && m_frog->position().y() >= Game::MIN_WATER_Y)
         {
             m_frog->setDead();
+            m_frog->setOnLog(false);
         }
         m_frog->updateFrog();
     }

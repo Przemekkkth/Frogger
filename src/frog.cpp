@@ -4,7 +4,8 @@
 
 Frog::Frog()
     : QGraphicsPixmapItem(Game::PATH_TO_FROG_PIXMAP), m_isDead(false),
-      m_moveUp(false), m_moveDown(false), m_moveLeft(false), m_moveRight(false)
+      m_moveUp(false), m_moveDown(false), m_moveLeft(false), m_moveRight(false),
+      m_onLog(false)
 {
     m_pixmap = pixmap();
     m_direction = Game::Direction::UP;
@@ -90,28 +91,69 @@ void Frog::updateFrog()
     }
     if(m_moveUp)
     {
-        setPosition(m_gridPos.x(), m_gridPos.y()-1);
+        if(!m_onLog)
+        {
+            setPosition(m_gridPos.x(), m_gridPos.y()-1);
+        }
+        else
+        {
+            setPos(x(), y()-Game::GRID_SIZE);
+        }
         m_direction = Game::Direction::UP;
         setPixmap(m_pixmap.copy(int(m_direction)*Game::GRID_SIZE, 0, Game::GRID_SIZE, Game::GRID_SIZE ));
         m_moveUp = false;
     }
     else if(m_moveDown)
     {
-        setPosition(m_gridPos.x(), m_gridPos.y()+1);
+        if(Game::convertPixelToGridPoint(y()) == Game::MAX_WATER_Y)
+        {
+            m_gridPos.setX(Game::convertPixelToGridPoint(x()));
+            m_gridPos.setY(Game::convertPixelToGridPoint(y()));
+            setPosition(m_gridPos.x(), m_gridPos.y()+1);
+            setOnLog(false);
+        }
+        else
+        {
+            if(!m_onLog)
+            {
+                setPosition(m_gridPos.x(), m_gridPos.y()+1);
+            }
+            else
+            {
+                setPos(x(), y()+Game::GRID_SIZE);
+            }
+        }
+
+
         m_direction = Game::Direction::DOWN;
         setPixmap(m_pixmap.copy(int(m_direction)*Game::GRID_SIZE, 0, Game::GRID_SIZE, Game::GRID_SIZE ));
         m_moveDown = false;
     }
     else if(m_moveLeft)
     {
-        setPosition(m_gridPos.x()-1, m_gridPos.y());
+        if(!m_onLog)
+        {
+            setPosition(m_gridPos.x()-1, m_gridPos.y());
+        }
+        else
+        {
+            setPos(x()-Game::GRID_SIZE, y());
+        }
         m_direction = Game::Direction::LEFT;
         setPixmap(m_pixmap.copy(int(m_direction)*Game::GRID_SIZE, 0, Game::GRID_SIZE, Game::GRID_SIZE ));
         m_moveLeft = false;
     }
     else if(m_moveRight)
     {
-        setPosition(m_gridPos.x()+1, m_gridPos.y());
+        if(!m_onLog)
+        {
+            setPosition(m_gridPos.x()+1, m_gridPos.y());
+        }
+        else
+        {
+            setPos(x()+Game::GRID_SIZE, y());
+        }
+
         m_direction = Game::Direction::RIGHT;
         setPixmap(m_pixmap.copy(int(m_direction)*Game::GRID_SIZE, 0, Game::GRID_SIZE, Game::GRID_SIZE ));
         m_moveRight = false;
@@ -123,6 +165,16 @@ void Frog::move(float speed)
 {
     m_gridPos.setX(Game::convertPixelToGridPoint(pos().x()));
     moveBy(speed, 0);
+}
+
+void Frog::setOnLog(bool val)
+{
+    m_onLog = val;
+}
+
+bool Frog::onLog() const
+{
+    return m_onLog;
 }
 
 void Frog::keyPressEvent(QKeyEvent *event)
