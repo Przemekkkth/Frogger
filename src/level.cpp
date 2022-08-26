@@ -1,6 +1,7 @@
 #include "level.h"
 #include "game.h"
 #include "car.h"
+#include "log.h"
 #include <QGraphicsPixmapItem>
 
 Level::Level(QGraphicsScene *scene)
@@ -168,7 +169,7 @@ void Level::loadLevel()
     }
 }
 
-void Level::loadEntities()
+void Level::loadCars()
 {
     if(m_currentLevel == 0)
     {
@@ -195,5 +196,23 @@ void Level::loadEntities()
         car3->setPosition(10, Game::WINDOW_HEIGHT-5);
         car3->setRandomSpeed(1);
         car3->setDirection(Game::Direction::LEFT);
+    }
+}
+
+void Level::loadLogs()
+{
+    if(m_currentLevel == 0)
+    {
+        Log* log = new Log(3);
+        log->setPosition(8,7);
+        m_scene->addItem(log);
+
+        Log* log1 = new Log(1);
+        log1->setPosition(8,6);
+        m_scene->addItem(log1);
+
+        Log* log2 = new Log(2);
+        log2->setPosition(8, 5);
+        m_scene->addItem(log2);
     }
 }

@@ -9,7 +9,8 @@ class Level : public QObject
 public:
     Level(QGraphicsScene* scene);
     void loadLevel();
-    void loadEntities();
+    void loadCars();
+    void loadLogs();
 private:
     QGraphicsScene *m_scene;
     int m_currentLevel;

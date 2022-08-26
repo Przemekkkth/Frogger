@@ -13,10 +13,12 @@ public:
     explicit Frog();
     void setPosition(int grid_x, int grid_y);
     void setPosition(QPoint gridPoint);
+    QPoint position() const;
     void setDead();
     void setLife();
     void checkCollisionWithCar();
     void updateFrog();
+    void move(float speed);
 signals:
 
 private:

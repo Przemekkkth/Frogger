@@ -1,6 +1,7 @@
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 SOURCES += \
+    src/log.cpp \
     src/car.cpp \
     src/frog.cpp \
     src/gamescene.cpp \
@@ -10,6 +11,7 @@ SOURCES += \
     src/view.cpp
 
 HEADERS += \
+    src/log.h \
     src/car.h \
     src/frog.h \
     src/gamescene.h \

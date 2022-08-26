@@ -49,6 +49,11 @@ void Frog::setPosition(QPoint gridPoint)
     setPosition(gridPoint.x(), gridPoint.y());
 }
 
+QPoint Frog::position() const
+{
+    return m_gridPos;
+}
+
 void Frog::setDead()
 {
     m_isDead = true;
@@ -112,6 +117,12 @@ void Frog::updateFrog()
         m_moveRight = false;
     }
     checkCollisionWithCar();
+}
+
+void Frog::move(float speed)
+{
+    m_gridPos.setX(Game::convertPixelToGridPoint(pos().x()));
+    moveBy(speed, 0);
 }
 
 void Frog::keyPressEvent(QKeyEvent *event)
