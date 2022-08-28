@@ -8,6 +8,7 @@ const QString Game::PATH_TO_CAR_R_PIXMAP     = ":/res/cars_r.png";
 const QString Game::PATH_TO_LOG_PIXMAP       = ":/res/logs.png";
 const QString Game::PATH_TO_MELTING_FROG_PIXMAP = ":/res/melting_frog.png";
 const QString Game::PATH_TO_TURTLE_PIXMAP = ":/res/turtle.png";
+const QString Game::PATH_TO_TURTLE_R_PIXMAP = ":/res/turtle_r.png";
 
 Game::Game()
 {

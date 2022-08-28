@@ -20,6 +20,13 @@ bool Turtle::isUnderWater()
     return false;
 }
 
+void Turtle::setTurtlePixmap(QPixmap pixmap)
+{
+    m_pixmap = pixmap;
+    m_currentFrame = 0;
+    setPixmap(m_pixmap.copy(0,0, Game::GRID_SIZE, Game::GRID_SIZE));
+}
+
 void Turtle::updatePixmap()
 {
     m_currentFrame++;

@@ -84,7 +84,25 @@ float Turtles::speed() const
 
 void Turtles::setDirection(Game::Direction direction)
 {
+    if(m_direction == direction)
+    {
+        return;
+    }
     m_direction = direction;
+    if(m_direction == Game::Direction::LEFT)
+    {
+        for(Turtle* turtle : m_turtles)
+        {
+            turtle->setTurtlePixmap(QPixmap(Game::PATH_TO_TURTLE_PIXMAP));
+        }
+    }
+    else
+    {
+        for(Turtle* turtle : m_turtles)
+        {
+            turtle->setTurtlePixmap(QPixmap(Game::PATH_TO_TURTLE_R_PIXMAP));
+        }
+    }
 }
 
 bool Turtles::checkFrog(const Frog *frog)

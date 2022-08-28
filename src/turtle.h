@@ -12,6 +12,7 @@ class Turtle : public QObject, public QGraphicsPixmapItem
 public:
     explicit Turtle();
     bool isUnderWater();
+    void setTurtlePixmap(QPixmap pixmap);
 signals:
 private slots:
     void updatePixmap();

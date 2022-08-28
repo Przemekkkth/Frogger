@@ -33,6 +33,7 @@ public:
     static const QString PATH_TO_LOG_PIXMAP;
     static const QString PATH_TO_MELTING_FROG_PIXMAP;
     static const QString PATH_TO_TURTLE_PIXMAP;
+    static const QString PATH_TO_TURTLE_R_PIXMAP;
 
     constexpr static const QPoint Asphalt0p = QPoint(0,0);
     constexpr static const QPoint Asphalt1p = QPoint(32,0);
