@@ -11,6 +11,7 @@ public:
     void loadLevel();
     void loadCars();
     void loadLogs();
+    void loadTurtles();
 private:
     QGraphicsScene *m_scene;
     int m_currentLevel;

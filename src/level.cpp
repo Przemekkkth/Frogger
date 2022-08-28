@@ -2,6 +2,7 @@
 #include "game.h"
 #include "car.h"
 #include "log.h"
+#include "turtles.h"
 #include <QGraphicsPixmapItem>
 
 Level::Level(QGraphicsScene *scene)
@@ -229,8 +230,22 @@ void Level::loadLogs()
         log5->setPosition(8, 3);
         m_scene->addItem(log5);
 
-        Log* log6 = new Log(2);
-        log6->setPosition(8, 2);
-        m_scene->addItem(log6);
+//        Log* log6 = new Log(2);
+//        log6->setPosition(8, 2);
+//        m_scene->addItem(log6);
+    }
+}
+
+void Level::loadTurtles()
+{
+    if(m_currentLevel == 0)
+    {
+        Turtles* turtles1 = new Turtles(3);
+        turtles1->setPosition(5,2);
+        m_scene->addItem(turtles1);
+        Turtles* turtles2 = new Turtles(3);
+        turtles2->setPosition(0,7);
+        turtles2->setDirection(Game::Direction::RIGHT);
+        m_scene->addItem(turtles2);
     }
 }

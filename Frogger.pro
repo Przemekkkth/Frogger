@@ -8,6 +8,8 @@ SOURCES += \
     src/game.cpp \
     src/level.cpp \
     src/main.cpp \
+    src/turtle.cpp \
+    src/turtles.cpp \
     src/view.cpp
 
 HEADERS += \
@@ -17,6 +19,8 @@ HEADERS += \
     src/gamescene.h \
     src/game.h \
     src/level.h \
+    src/turtle.h \
+    src/turtles.h \
     src/view.h
 
 RESOURCES += \

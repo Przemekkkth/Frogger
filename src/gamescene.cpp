@@ -1,5 +1,6 @@
 #include "gamescene.h"
 #include "log.h"
+#include "turtles.h"
 
 GameScene::GameScene(QObject *parent)
     : QGraphicsScene{parent}, m_level(this),
@@ -12,6 +13,7 @@ GameScene::GameScene(QObject *parent)
     m_level.loadLevel();
     m_level.loadCars();
     m_level.loadLogs();
+    m_level.loadTurtles();
 
     m_frog = new Frog();
     addItem(m_frog);
@@ -20,7 +22,6 @@ GameScene::GameScene(QObject *parent)
     m_timer.start(int(1000.0f)/Game::FPS);
     m_elapsedTimer.start();
 }
-
 
 void GameScene::loop()
 {
@@ -44,6 +45,18 @@ void GameScene::loop()
                     m_frog->position().y() <= Game::MAX_WATER_Y && m_frog->position().y() >= Game::MIN_WATER_Y)
             {
                 m_frog->move(Log::s_logsManager.at(idx)->speed());
+                m_frog->setOnLog(true);
+                isFragUnderWater = false;
+            }
+        }
+
+        for(int idx = Turtles::s_turtlesManager.size()-1; idx >= 0; --idx)
+        {
+            Turtles::s_turtlesManager.at(idx)->move();
+            if(Turtles::s_turtlesManager.at(idx)->checkFrog(m_frog) &&
+                    m_frog->position().y() <= Game::MAX_WATER_Y && m_frog->position().y() >= Game::MIN_WATER_Y)
+            {
+                m_frog->move(Turtles::s_turtlesManager.at(idx)->speed());
                 m_frog->setOnLog(true);
                 isFragUnderWater = false;
             }
