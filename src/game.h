@@ -3,6 +3,7 @@
 #include <QSize>
 #include <QString>
 #include <QPoint>
+#include <QList>
 
 class Game
 {
@@ -16,7 +17,7 @@ public:
     constexpr static const int FPS = 60;
     constexpr static const int MAX_WATER_Y = 7;
     constexpr static const int MIN_WATER_Y = 2;
-
+    constexpr static const int SWAMP_Y = 1;
 
     static int convertPixelToGridPoint(int pixelVal);
     static int convertGridPointToPixel(int gridPointVal);
@@ -34,6 +35,7 @@ public:
     static const QString PATH_TO_MELTING_FROG_PIXMAP;
     static const QString PATH_TO_TURTLE_PIXMAP;
     static const QString PATH_TO_TURTLE_R_PIXMAP;
+    static const QString PATH_TO_WIN_FROG_PIXMAP;
 
     constexpr static const QPoint Asphalt0p = QPoint(0,0);
     constexpr static const QPoint Asphalt1p = QPoint(32,0);
@@ -45,6 +47,7 @@ public:
     constexpr static const QPoint Water0p = QPoint(0, 32);
     constexpr static const QPoint Grass0p = QPoint(32, 32);
 
+    static QList<bool> SWAMP_POS;
 
     enum class CarType{
         RACER, BULLDOZER, CAR, TIR

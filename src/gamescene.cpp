@@ -65,10 +65,15 @@ void GameScene::loop()
         if( isFragUnderWater &&
                 m_frog->position().y() <= Game::MAX_WATER_Y && m_frog->position().y() >= Game::MIN_WATER_Y)
         {
-            qDebug() << "Dead " << m_frog->position();
             m_frog->setDeadByWater();
             m_frog->setOnLog(false);
         }
+
+        if( m_frog->position().y() == Game::SWAMP_Y)
+        {
+            m_frog->checkSwampPos();
+        }
+
         m_frog->updateFrog();
     }
 }

@@ -24,6 +24,7 @@ public:
     void setOnLog(bool val);
     bool onLog() const;
     bool isDead() const;
+    void checkSwampPos();
 signals:
 
 private slots:
