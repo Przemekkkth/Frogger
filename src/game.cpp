@@ -11,6 +11,10 @@ const QString Game::PATH_TO_TURTLE_PIXMAP       = ":/res/sprite/turtle.png";
 const QString Game::PATH_TO_TURTLE_R_PIXMAP     = ":/res/sprite/turtle_r.png";
 const QString Game::PATH_TO_WIN_FROG_PIXMAP     = ":/res/sprite/frog_win.png";
 
+const QUrl Game::PATH_TO_FROGGER_EXTRA_SFX  = QUrl("qrc:/res/sfx/sound-frogger-extra.wav");
+const QUrl Game::PATH_TO_FROGGER_PLUNK_SFX  = QUrl("qrc:/res/sfx/sound-frogger-plunk.wav");
+const QUrl Game::PATH_TO_FROGGER_SQUASH_SFX = QUrl("qrc:/res/sfx/sound-frogger-squash.wav");
+
 QList<bool> Game::SWAMP_POS = {false, false, false, false};
 
 Game::Game()

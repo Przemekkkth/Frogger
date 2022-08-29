@@ -4,6 +4,7 @@
 #include <QString>
 #include <QPoint>
 #include <QList>
+#include <QUrl>
 
 class Game
 {
@@ -36,6 +37,10 @@ public:
     static const QString PATH_TO_TURTLE_PIXMAP;
     static const QString PATH_TO_TURTLE_R_PIXMAP;
     static const QString PATH_TO_WIN_FROG_PIXMAP;
+
+    static const QUrl PATH_TO_FROGGER_EXTRA_SFX;
+    static const QUrl PATH_TO_FROGGER_PLUNK_SFX;
+    static const QUrl PATH_TO_FROGGER_SQUASH_SFX;
 
     constexpr static const QPoint Asphalt0p = QPoint(0,0);
     constexpr static const QPoint Asphalt1p = QPoint(32,0);

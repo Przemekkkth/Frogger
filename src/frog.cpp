@@ -20,6 +20,10 @@ Frog::Frog()
     setFocus();
     setZValue(int(Game::Layer::FROG));
 
+    m_frogExtra_SFX.setSource(Game::PATH_TO_FROGGER_EXTRA_SFX);
+    m_frogPlunk_SFX.setSource(Game::PATH_TO_FROGGER_PLUNK_SFX);
+    m_frogSquash_SFX.setSource(Game::PATH_TO_FROGGER_SQUASH_SFX);
+
     connect(&m_meltFrogTimer, &QTimer::timeout, this, &Frog::updateMeltFrogPixmap);
 }
 
@@ -65,6 +69,7 @@ void Frog::setDeadByCar()
     {
         return;
     }
+    m_frogSquash_SFX.play();
     m_isDead = true;
     setPixmap(m_deadFrogPixmap.copy(int(m_direction)*Game::GRID_SIZE, 0, Game::GRID_SIZE, Game::GRID_SIZE ));
 }
@@ -75,6 +80,7 @@ void Frog::setDeadByWater()
     {
         return;
     }
+    m_frogPlunk_SFX.play();
     m_isDead = true;
     setPixmap(m_meltFrogPixmap.copy(m_currentMeltFrogFrame*Game::GRID_SIZE,int(m_direction)*Game::GRID_SIZE, Game::GRID_SIZE, Game::GRID_SIZE ));
     m_meltFrogTimer.start(125);
@@ -223,6 +229,7 @@ void Frog::checkSwampPos()
         scene()->addItem(p);
         setPosition(Game::WINDOW_WIDTH/2-1, Game::WINDOW_HEIGHT-1);
         Game::SWAMP_POS[0] = true;
+        m_frogExtra_SFX.play();
         return;
     }
     // 1
@@ -233,6 +240,7 @@ void Frog::checkSwampPos()
         scene()->addItem(p);
         setPosition(Game::WINDOW_WIDTH/2-1, Game::WINDOW_HEIGHT-1);
         Game::SWAMP_POS[1] = true;
+        m_frogExtra_SFX.play();
         return;
     }
     // 2
@@ -243,6 +251,7 @@ void Frog::checkSwampPos()
         scene()->addItem(p);
         setPosition(Game::WINDOW_WIDTH/2-1, Game::WINDOW_HEIGHT-1);
         Game::SWAMP_POS[2] = true;
+        m_frogExtra_SFX.play();
         return;
     }
     // 3
@@ -253,6 +262,7 @@ void Frog::checkSwampPos()
         scene()->addItem(p);
         setPosition(Game::WINDOW_WIDTH/2-1, Game::WINDOW_HEIGHT-1);
         Game::SWAMP_POS[3] = true;
+        m_frogExtra_SFX.play();
         return;
     }
 

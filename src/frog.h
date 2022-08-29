@@ -5,6 +5,7 @@
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
 #include <QTimer>
+#include <QSoundEffect>
 #include "game.h"
 
 class Frog : public QObject, public QGraphicsPixmapItem
@@ -41,6 +42,7 @@ private:
     bool m_onLog;
     int m_currentMeltFrogFrame;
     QTimer m_meltFrogTimer;
+    QSoundEffect m_frogExtra_SFX, m_frogPlunk_SFX, m_frogSquash_SFX;
 protected:
     virtual void keyPressEvent(QKeyEvent *event) override;
 };
