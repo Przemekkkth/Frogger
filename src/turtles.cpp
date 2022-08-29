@@ -122,3 +122,9 @@ bool Turtles::checkFrog(const Frog *frog)
         return false;
     }
 }
+
+void Turtles::setRandomSpeed(int X)
+{
+    float r2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/X))+1;
+    m_speed = r2;
+}

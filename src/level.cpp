@@ -211,13 +211,9 @@ void Level::loadTurtles()
 {
     if(m_currentLevel == 0)
     {
-        Turtles* turtles1 = new Turtles(3);
-        turtles1->setPosition(5,2);
-        m_scene->addItem(turtles1);
-        Turtles* turtles2 = new Turtles(3);
-        turtles2->setPosition(0,7);
-        turtles2->setDirection(Game::Direction::RIGHT);
-        m_scene->addItem(turtles2);
+        makeTurtles(3, QPoint(5,2), 1, Game::Direction::LEFT);
+
+        makeTurtles(3, QPoint(0, 7), 1, Game::Direction::RIGHT);
     }
 }
 
@@ -237,4 +233,13 @@ void Level::makeLog(int length, QPoint point, int speed, Game::Direction directi
     log->setPosition(point.x(), point.y());
     log->setDirection(direction);
     log->setRandomSpeed(speed);
+}
+
+void Level::makeTurtles(int count, QPoint point, int speed, Game::Direction direction)
+{
+    Turtles* turtles = new Turtles(count);
+    m_scene->addItem(turtles);
+    turtles->setPosition(point.x(), point.y());
+    turtles->setDirection(direction);
+    turtles->setRandomSpeed(speed);
 }
