@@ -7,6 +7,7 @@ GameScene::GameScene(QObject *parent)
       m_loopTime(0.0f),
       m_deltaTime(0.0f), m_loopSpeed(int(1000.0f/Game::FPS))
 {
+    srand(time(0));
     setSceneRect(0, 0, Game::RESOLUTION.width(), Game::RESOLUTION.height());
     setBackgroundBrush(QBrush(Qt::black));
 

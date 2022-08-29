@@ -175,16 +175,23 @@ void Level::loadCars()
     if(m_currentLevel == 0)
     {
         //0 row
-        makeCar(Game::CarType::RACER, QPoint(8, Game::WINDOW_HEIGHT-2), 2, Game::Direction::LEFT);
+        makeCar(Game::CarType::RACER, QPoint(8, Game::WINDOW_HEIGHT-2), 4, Game::Direction::LEFT);
 
         //1
-        makeCar(Game::CarType::BULLDOZER, QPoint(5, Game::WINDOW_HEIGHT-3), 1, Game::Direction::RIGHT);
+        makeCar(Game::CarType::BULLDOZER, QPoint(5, Game::WINDOW_HEIGHT-3), 4, Game::Direction::RIGHT);
 
         //2
-        makeCar(Game::CarType::CAR, QPoint(10, Game::WINDOW_HEIGHT-4), 2, Game::Direction::RIGHT);
+        makeCar(Game::CarType::CAR, QPoint(10, Game::WINDOW_HEIGHT-4), 4, Game::Direction::RIGHT);
 
         //3
-        makeCar(Game::CarType::TIR, QPoint(10, Game::WINDOW_HEIGHT-5), 2, Game::Direction::LEFT);
+        makeCar(Game::CarType::TIR, QPoint(10, Game::WINDOW_HEIGHT-5), 4, Game::Direction::LEFT);
+
+        //4
+        makeCar(Game::CarType::TIR, QPoint(10, Game::WINDOW_HEIGHT-6), 4, Game::Direction::RIGHT);
+
+        //5
+        makeCar(Game::CarType::RACER, QPoint(14, Game::WINDOW_HEIGHT-7), 4, Game::Direction::LEFT);
+
     }
 }
 
