@@ -21,61 +21,61 @@ void Level::loadLevel()
         m_scene->addItem(tileItem);
     }
     //1
-        QGraphicsPixmapItem* tileItem1 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem1->setPos(Game::convertGridPointToPixel(0), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem1);
+    QGraphicsPixmapItem* tileItem1 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem1->setPos(Game::convertGridPointToPixel(0), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem1);
 
-        QGraphicsPixmapItem* tileItem2 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem2->setPos(Game::convertGridPointToPixel(1), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem2);
+    QGraphicsPixmapItem* tileItem2 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem2->setPos(Game::convertGridPointToPixel(1), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem2);
 
-        QGraphicsPixmapItem* tileItem3 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem3->setPos(Game::convertGridPointToPixel(2), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem3);
+    QGraphicsPixmapItem* tileItem3 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem3->setPos(Game::convertGridPointToPixel(2), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem3);
 
-        QGraphicsPixmapItem* tileItem4 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem4->setPos(Game::convertGridPointToPixel(3), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem4);
+    QGraphicsPixmapItem* tileItem4 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem4->setPos(Game::convertGridPointToPixel(3), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem4);
 
-        QGraphicsPixmapItem* tileItem5 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem5->setPos(Game::convertGridPointToPixel(4), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem5);
+    QGraphicsPixmapItem* tileItem5 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem5->setPos(Game::convertGridPointToPixel(4), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem5);
 
-        QGraphicsPixmapItem* tileItem6 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem6->setPos(Game::convertGridPointToPixel(5), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem6);
+    QGraphicsPixmapItem* tileItem6 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem6->setPos(Game::convertGridPointToPixel(5), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem6);
 
-        QGraphicsPixmapItem* tileItem7 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem7->setPos(Game::convertGridPointToPixel(6), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem7);
+    QGraphicsPixmapItem* tileItem7 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem7->setPos(Game::convertGridPointToPixel(6), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem7);
 
-        QGraphicsPixmapItem* tileItem8 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem8->setPos(Game::convertGridPointToPixel(7), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem8);
+    QGraphicsPixmapItem* tileItem8 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem8->setPos(Game::convertGridPointToPixel(7), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem8);
 
-        QGraphicsPixmapItem* tileItem9 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem9->setPos(Game::convertGridPointToPixel(8), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem9);
+    QGraphicsPixmapItem* tileItem9 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem9->setPos(Game::convertGridPointToPixel(8), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem9);
 
-        QGraphicsPixmapItem* tileItem10 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem10->setPos(Game::convertGridPointToPixel(9), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem10);
+    QGraphicsPixmapItem* tileItem10 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem10->setPos(Game::convertGridPointToPixel(9), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem10);
 
-        QGraphicsPixmapItem* tileItem11 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem11->setPos(Game::convertGridPointToPixel(10), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem11);
+    QGraphicsPixmapItem* tileItem11 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem11->setPos(Game::convertGridPointToPixel(10), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem11);
 
-        QGraphicsPixmapItem* tileItem12 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem12->setPos(Game::convertGridPointToPixel(11), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem12);
+    QGraphicsPixmapItem* tileItem12 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem12->setPos(Game::convertGridPointToPixel(11), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem12);
 
-        QGraphicsPixmapItem* tileItem13 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem13->setPos(Game::convertGridPointToPixel(12), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem13);
+    QGraphicsPixmapItem* tileItem13 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Water0p.x(), Game::Water0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem13->setPos(Game::convertGridPointToPixel(12), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem13);
 
-        QGraphicsPixmapItem* tileItem14 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
-        tileItem14->setPos(Game::convertGridPointToPixel(13), Game::convertGridPointToPixel(1));
-        m_scene->addItem(tileItem14);
+    QGraphicsPixmapItem* tileItem14 = new QGraphicsPixmapItem(QPixmap(Game::PATH_TO_TILE_PIXMAP).copy(Game::Grass0p.x(), Game::Grass0p.y(), Game::GRID_SIZE, Game::GRID_SIZE));
+    tileItem14->setPos(Game::convertGridPointToPixel(13), Game::convertGridPointToPixel(1));
+    m_scene->addItem(tileItem14);
     //2
     for(int i = 0; i < Game::WINDOW_WIDTH; ++i)
     {
@@ -174,29 +174,17 @@ void Level::loadCars()
 {
     if(m_currentLevel == 0)
     {
-        Car* car = new Car(Game::CarType::RACER);
-        m_scene->addItem(car);
-        car->setPosition(8, Game::WINDOW_HEIGHT-2);
-        car->setRandomSpeed(1);
-        car->setDirection(Game::Direction::LEFT);
+        //0 row
+        makeCar(Game::CarType::RACER, QPoint(8, Game::WINDOW_HEIGHT-2), 2, Game::Direction::LEFT);
 
-        Car* car1 = new Car(Game::CarType::BULLDOZER);
-        m_scene->addItem(car1);
-        car1->setPosition(5, Game::WINDOW_HEIGHT-3);
-        car1->setRandomSpeed(1);
-        car1->setDirection(Game::Direction::LEFT);
+        //1
+        makeCar(Game::CarType::BULLDOZER, QPoint(5, Game::WINDOW_HEIGHT-3), 1, Game::Direction::RIGHT);
 
-        Car* car2 = new Car(Game::CarType::CAR);
-        m_scene->addItem(car2);
-        car2->setPosition(10, Game::WINDOW_HEIGHT-4);
-        car2->setRandomSpeed(1);
-        car2->setDirection(Game::Direction::RIGHT);
+        //2
+        makeCar(Game::CarType::CAR, QPoint(10, Game::WINDOW_HEIGHT-4), 2, Game::Direction::RIGHT);
 
-        Car* car3 = new Car(Game::CarType::TIR);
-        m_scene->addItem(car3);
-        car3->setPosition(10, Game::WINDOW_HEIGHT-5);
-        car3->setRandomSpeed(1);
-        car3->setDirection(Game::Direction::LEFT);
+        //3
+        makeCar(Game::CarType::TIR, QPoint(10, Game::WINDOW_HEIGHT-5), 2, Game::Direction::LEFT);
     }
 }
 
@@ -204,35 +192,18 @@ void Level::loadLogs()
 {
     if(m_currentLevel == 0)
     {
-        Log* log = new Log(3);
-        log->setPosition(8,7);
-        log->setDirection(Game::Direction::RIGHT);
-        m_scene->addItem(log);
+        makeLog(3, QPoint(8, 7), 1, Game::Direction::RIGHT);
 
-        Log* log1 = new Log(3);
-        log1->setPosition(12,7);
-        log1->setDirection(Game::Direction::RIGHT);
-        m_scene->addItem(log1);
+        makeLog(3, QPoint(12, 7), 1, Game::Direction::RIGHT);
 
-        Log* log2 = new Log(2);
-        log2->setPosition(8,6);
-        m_scene->addItem(log2);
+        makeLog(2, QPoint(8, 6), 1, Game::Direction::LEFT);
 
-        Log* log3 = new Log(2);
-        log3->setPosition(8, 5);
-        m_scene->addItem(log3);
+        makeLog(2, QPoint(8, 5), 1, Game::Direction::LEFT);
 
-        Log* log4 = new Log(2);
-        log4->setPosition(8, 4);
-        m_scene->addItem(log4);
+        makeLog(2, QPoint(8, 4), 1, Game::Direction::RIGHT);
 
-        Log* log5 = new Log(2);
-        log5->setPosition(8, 3);
-        m_scene->addItem(log5);
+        makeLog(2, QPoint(8, 3), 1, Game::Direction::RIGHT);
 
-//        Log* log6 = new Log(2);
-//        log6->setPosition(8, 2);
-//        m_scene->addItem(log6);
     }
 }
 
@@ -248,4 +219,22 @@ void Level::loadTurtles()
         turtles2->setDirection(Game::Direction::RIGHT);
         m_scene->addItem(turtles2);
     }
+}
+
+void Level::makeCar(Game::CarType type, QPoint point, int speed, Game::Direction direction)
+{
+    Car* car = new Car(type);
+    m_scene->addItem(car);
+    car->setPosition(point);
+    car->setRandomSpeed(speed);
+    car->setDirection(direction);
+}
+
+void Level::makeLog(int length, QPoint point, int speed, Game::Direction direction)
+{
+    Log* log = new Log(length);
+    m_scene->addItem(log);
+    log->setPosition(point.x(), point.y());
+    log->setDirection(direction);
+    log->setRandomSpeed(speed);
 }

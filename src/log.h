@@ -19,6 +19,8 @@ public:
     bool checkFrog(const Frog* frog);
     float speed() const;
     void setDirection(Game::Direction direction);
+    void setRandomSpeed(int X=1);
+
 signals:
 
 private:
