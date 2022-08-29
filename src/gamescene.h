@@ -27,6 +27,11 @@ private:
     const float m_loopSpeed;
     QTimer m_timer;
     QElapsedTimer m_elapsedTimer;
+
+    void renderGameScene();
+    // QGraphicsScene interface
+protected:
+    virtual void keyPressEvent(QKeyEvent *event) override;
 };
 
 #endif // GAMESCENE_H

@@ -51,6 +51,8 @@ public:
 
     constexpr static const QPoint Water0p = QPoint(0, 32);
     constexpr static const QPoint Grass0p = QPoint(32, 32);
+    constexpr static const QPoint Grass1p = QPoint(64, 32);
+    constexpr static const QPoint Grass2p = QPoint(96, 32);
 
     static QList<bool> SWAMP_POS;
 
