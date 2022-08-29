@@ -199,17 +199,20 @@ void Level::loadLogs()
 {
     if(m_currentLevel == 0)
     {
-        makeLog(3, QPoint(8, 7), 1, Game::Direction::RIGHT);
+        makeLog(2, QPoint(8, 2), 1, Game::Direction::LEFT);
 
-        makeLog(3, QPoint(12, 7), 1, Game::Direction::RIGHT);
+        makeLog(1, QPoint(8, 6), 3, Game::Direction::LEFT);
+        makeLog(1, QPoint(14, 6), 3, Game::Direction::LEFT);
+        makeLog(2, QPoint(0, 6), 3, Game::Direction::LEFT);
 
-        makeLog(2, QPoint(8, 6), 1, Game::Direction::LEFT);
+        makeLog(2, QPoint(8, 5), 4, Game::Direction::RIGHT);
+        makeLog(2, QPoint(0, 5), 4, Game::Direction::RIGHT);
+        makeLog(1, QPoint(13, 5), 4, Game::Direction::RIGHT);
 
-        makeLog(2, QPoint(8, 5), 1, Game::Direction::LEFT);
-
-        makeLog(2, QPoint(8, 4), 1, Game::Direction::RIGHT);
-
-        makeLog(2, QPoint(8, 3), 1, Game::Direction::RIGHT);
+        makeLog(2, QPoint(0, 3), 2, Game::Direction::RIGHT);
+        makeLog(2, QPoint(8, 3), 2, Game::Direction::RIGHT);
+        makeLog(2, QPoint(14, 3), 2, Game::Direction::RIGHT);
+        makeLog(2, QPoint(4, 3), 2, Game::Direction::RIGHT);
 
     }
 }
@@ -218,9 +221,14 @@ void Level::loadTurtles()
 {
     if(m_currentLevel == 0)
     {
-        makeTurtles(3, QPoint(5,2), 1, Game::Direction::LEFT);
+        makeTurtles(3, QPoint(0,2), 1, Game::Direction::LEFT);
+        makeTurtles(3, QPoint(12,2), 1, Game::Direction::LEFT);
 
-        makeTurtles(3, QPoint(0, 7), 1, Game::Direction::RIGHT);
+        makeTurtles(3, QPoint(0, 7), 2, Game::Direction::RIGHT);
+        makeTurtles(3, QPoint(7, 7), 2, Game::Direction::RIGHT);
+
+        makeTurtles(4, QPoint(0, 4), 4, Game::Direction::LEFT);
+        makeTurtles(4, QPoint(7, 4), 4, Game::Direction::LEFT);
     }
 }
 
@@ -229,7 +237,7 @@ void Level::makeCar(Game::CarType type, QPoint point, int speed, Game::Direction
     Car* car = new Car(type);
     m_scene->addItem(car);
     car->setPosition(point);
-    car->setRandomSpeed(speed);
+    car->setSpeed(speed);
     car->setDirection(direction);
 }
 
@@ -239,7 +247,7 @@ void Level::makeLog(int length, QPoint point, int speed, Game::Direction directi
     m_scene->addItem(log);
     log->setPosition(point.x(), point.y());
     log->setDirection(direction);
-    log->setRandomSpeed(speed);
+    log->setSpeed(speed);
 }
 
 void Level::makeTurtles(int count, QPoint point, int speed, Game::Direction direction)
@@ -248,5 +256,5 @@ void Level::makeTurtles(int count, QPoint point, int speed, Game::Direction dire
     m_scene->addItem(turtles);
     turtles->setPosition(point.x(), point.y());
     turtles->setDirection(direction);
-    turtles->setRandomSpeed(speed);
+    turtles->setSpeed(speed);
 }

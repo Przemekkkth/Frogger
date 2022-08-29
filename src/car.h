@@ -16,7 +16,7 @@ public:
     void setPosition(QPoint gridPoint);
     void setPosition(int grid_X, int grid_y);
     void move();
-    void setRandomSpeed(int X = 1);
+    void setSpeed(int X = 1);
     void setDirection(Game::Direction direction);
 
     static QList<Car*> s_carsManager;

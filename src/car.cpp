@@ -105,10 +105,9 @@ void Car::move()
     }
 }
 
-void Car::setRandomSpeed(int X)
+void Car::setSpeed(int X)
 {
-    float r2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/X))+1;
-    m_speed = r2;
+    m_speed = X;
 }
 
 void Car::setDirection(Game::Direction direction)

@@ -18,7 +18,7 @@ public:
     float speed() const;
     void setDirection(Game::Direction direction);
     bool checkFrog(const Frog* frog);
-    void setRandomSpeed(int X=1);
+    void setSpeed(int X=1);
     static QList<Turtles*> s_turtlesManager;
 signals:
 

@@ -112,8 +112,7 @@ void Log::setDirection(Game::Direction direction)
     m_direction = direction;
 }
 
-void Log::setRandomSpeed(int X)
+void Log::setSpeed(int X)
 {
-    float r2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/X))+1;
-    m_speed = r2;
+    m_speed = X;
 }
