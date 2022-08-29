@@ -6,7 +6,7 @@
 #include <QGraphicsPixmapItem>
 
 Level::Level(QGraphicsScene *scene)
-    : m_scene(scene), m_currentLevel(-1)
+    : m_scene(scene), m_currentLevel(0)
 {
 
 }
