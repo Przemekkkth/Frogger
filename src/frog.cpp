@@ -118,6 +118,7 @@ void Frog::updateFrog()
         else
         {
             setPos(x(), y()-Game::GRID_SIZE);
+            m_gridPos.setY(m_gridPos.y() - 1);
         }
         m_direction = Game::Direction::UP;
         setPixmap(m_pixmap.copy(int(m_direction)*Game::GRID_SIZE, 0, Game::GRID_SIZE, Game::GRID_SIZE ));
@@ -141,6 +142,7 @@ void Frog::updateFrog()
             else
             {
                 setPos(x(), y()+Game::GRID_SIZE);
+                m_gridPos.setY(m_gridPos.y() + 1);
             }
         }
 

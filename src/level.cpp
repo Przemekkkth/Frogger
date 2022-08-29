@@ -6,7 +6,7 @@
 #include <QGraphicsPixmapItem>
 
 Level::Level(QGraphicsScene *scene)
-    : m_scene(scene), m_currentLevel(0)
+    : m_scene(scene), m_currentLevel(-1)
 {
 
 }
@@ -203,16 +203,45 @@ void Level::loadLogs()
 
         makeLog(1, QPoint(8, 6), 3, Game::Direction::LEFT);
         makeLog(1, QPoint(14, 6), 3, Game::Direction::LEFT);
-        makeLog(2, QPoint(0, 6), 3, Game::Direction::LEFT);
+        makeLog(1, QPoint(0, 6), 3, Game::Direction::LEFT);
+        makeLog(1, QPoint(4, 6), 3, Game::Direction::LEFT);
 
         makeLog(2, QPoint(8, 5), 4, Game::Direction::RIGHT);
         makeLog(2, QPoint(0, 5), 4, Game::Direction::RIGHT);
-        makeLog(1, QPoint(13, 5), 4, Game::Direction::RIGHT);
+        makeLog(2, QPoint(13, 5), 4, Game::Direction::RIGHT);
 
         makeLog(2, QPoint(0, 3), 2, Game::Direction::RIGHT);
         makeLog(2, QPoint(8, 3), 2, Game::Direction::RIGHT);
         makeLog(2, QPoint(14, 3), 2, Game::Direction::RIGHT);
         makeLog(2, QPoint(4, 3), 2, Game::Direction::RIGHT);
+
+    }
+    else if(m_currentLevel == -1)
+    {
+        makeLog(2, QPoint(8, 2), 1, Game::Direction::LEFT);
+        makeLog(2, QPoint(13, 2), 1, Game::Direction::LEFT);
+
+        makeLog(2, QPoint(0, 3), 2, Game::Direction::RIGHT);
+        makeLog(2, QPoint(8, 3), 2, Game::Direction::RIGHT);
+        makeLog(2, QPoint(14, 3), 2, Game::Direction::RIGHT);
+        makeLog(2, QPoint(4, 3), 2, Game::Direction::RIGHT);
+
+        makeLog(2, QPoint(8, 4), 1, Game::Direction::RIGHT);
+        makeLog(2, QPoint(0, 4), 1, Game::Direction::RIGHT);
+        makeLog(2, QPoint(13, 4), 1, Game::Direction::RIGHT);
+
+        makeLog(2, QPoint(8, 5), 1, Game::Direction::RIGHT);
+        makeLog(2, QPoint(0, 5), 1, Game::Direction::RIGHT);
+        makeLog(2, QPoint(13, 5), 1, Game::Direction::RIGHT);
+
+        makeLog(2, QPoint(8, 6), 1, Game::Direction::LEFT);
+        makeLog(2, QPoint(14, 6), 1, Game::Direction::LEFT);
+        makeLog(2, QPoint(0, 6), 1, Game::Direction::LEFT);
+        makeLog(2, QPoint(4, 6), 1, Game::Direction::LEFT);
+
+        makeLog(2, QPoint(0, 7), 1, Game::Direction::LEFT);
+        makeLog(2, QPoint(4, 7), 1, Game::Direction::LEFT);
+
 
     }
 }
