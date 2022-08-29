@@ -1,14 +1,17 @@
 <RCC>
     <qresource prefix="/">
-        <file>res/frog.png</file>
-        <file>res/tiles.png</file>
-        <file>res/car.png</file>
-        <file>res/cars_r.png</file>
-        <file>res/frog_dead.png</file>
-        <file>res/logs.png</file>
-        <file>res/melting_frog.png</file>
-        <file>res/turtle.png</file>
-        <file>res/turtle_r.png</file>
-        <file>res/frog_win.png</file>
+        <file>res/sprite/car.png</file>
+        <file>res/sprite/cars_r.png</file>
+        <file>res/sprite/frog.png</file>
+        <file>res/sprite/frog_dead.png</file>
+        <file>res/sprite/frog_win.png</file>
+        <file>res/sprite/logs.png</file>
+        <file>res/sprite/melting_frog.png</file>
+        <file>res/sprite/tiles.png</file>
+        <file>res/sprite/turtle.png</file>
+        <file>res/sprite/turtle_r.png</file>
+        <file>res/sfx/sound-frogger-extra.wav</file>
+        <file>res/sfx/sound-frogger-plunk.wav</file>
+        <file>res/sfx/sound-frogger-squash.wav</file>
     </qresource>
 </RCC>
