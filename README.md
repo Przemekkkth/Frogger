@@ -18,4 +18,4 @@ qmake && make
 ## Addons
 * [Qt](https://www.qt.io/) - Cross-Platform software for embedded & desktop
 * [yt](https://youtu.be/PUZY0EbKDO4) - gameplay
-* [Play online](https://przemekkkth.github.io/frogger/index.html) - game hosted on GitHub
+* [Play online](https://przemekkkth.github.io/assets/games/frogger/index.html) - game hosted on GitHub
